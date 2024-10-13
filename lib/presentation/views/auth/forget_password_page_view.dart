@@ -91,9 +91,11 @@ class ForgetPasswordPageView extends StatelessWidget {
                       height: 16,
                     ),
                     PrimaryTextButton(
-                      title: 'Forgot password? ',
+                      title: 'Go back !',
                       fontSize: 14,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                       textColor: AppColor.kPrimary,
                     ),
                   ],

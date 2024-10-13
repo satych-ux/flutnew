@@ -1,3 +1,4 @@
+import 'package:flutnew/presentation/views/auth/forget_password_page_view.dart';
 import 'package:flutnew/presentation/views/auth/signup_page_view.dart';
 import 'package:flutnew/presentation/views/landing/landing_page_view.dart';
 import 'package:flutnew/presentation/widgets/auth/common_component/auth_primary_button.dart';
@@ -98,7 +99,13 @@ class LoginPageView extends StatelessWidget {
                     PrimaryTextButton(
                       title: 'Forgot password?',
                       fontSize: 14,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ForgetPasswordPageView()),
+                        );
+                      },
                       textColor: AppColor.kPrimary,
                     ),
                     const SizedBox(height: 32),
