@@ -85,17 +85,19 @@ class LoginPageView extends StatelessWidget {
                         builder: (context, state) {
                           isEmailValid = state == 'Email is valid';
                           print('state $state');
-                          return Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              state.toString(),
-                              style: const TextStyle(
-                                color: Colors.red,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 12,
-                              ),
-                            ),
-                          );
+                          return state != null
+                              ? Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    state.toString(),
+                                    style: const TextStyle(
+                                      color: Colors.red,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                )
+                              : SizedBox.shrink();
                         },
                       ),
 
