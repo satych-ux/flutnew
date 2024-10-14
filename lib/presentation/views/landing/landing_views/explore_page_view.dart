@@ -32,7 +32,7 @@ class ExploreScreen extends StatelessWidget {
             const SliverToBoxAdapter(
               child: Padding(
                 padding: EdgeInsets.symmetric(vertical: 12.0),
-                child: Expanded(
+                child: SizedBox(
                   child: AutoSuggestTextField(),
                 ),
               ),
