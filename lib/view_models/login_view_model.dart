@@ -13,7 +13,6 @@ class LoginCubit extends Cubit<String?> {
       emit("Invalid email format");
     } else {
       // print("Email is valid");
-
       emit('Email is valid'); // Null means no error
     }
   }
