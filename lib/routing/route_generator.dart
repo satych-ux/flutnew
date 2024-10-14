@@ -3,7 +3,9 @@ import 'package:flutnew/presentation/views/auth/login_page_view.dart';
 import 'package:flutnew/presentation/views/auth/signup_page_view.dart';
 import 'package:flutnew/presentation/views/landing/landing_page_view.dart';
 import 'package:flutnew/utils/constants/named_routes.dart';
+import 'package:flutnew/view_models/login_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class RouteGenerator {
   RouteGenerator();
@@ -19,7 +21,10 @@ class RouteGenerator {
       case NamedRoutes.loginRoute:
         return MaterialPageRoute(
           settings: settings,
-          builder: (_) => LoginPageView(),
+          builder: (_) => BlocProvider(
+            create: (context) => LoginCubit(),
+            child: LoginPageView(),
+          ),
         );
       case NamedRoutes.signupRoute:
         return MaterialPageRoute(
