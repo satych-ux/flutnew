@@ -39,6 +39,7 @@ dependencies:
   carousel_slider:
   smooth_page_indicator:
   flutter_svg:
+  get_it:
 #  google_fonts:
 
 dev_dependencies:

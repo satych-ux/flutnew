@@ -1,3 +1,4 @@
+import 'package:flutnew/di_service_locator/service_locator.dart';
 import 'package:flutnew/presentation/views/landing/landing_page_view.dart';
 import 'package:flutnew/presentation/widgets/auth/common_component/auth_primary_button.dart';
 import 'package:flutnew/presentation/widgets/auth/common_component/primary_text_button.dart';
@@ -94,7 +95,7 @@ class ForgetPasswordPageView extends StatelessWidget {
                       title: 'Go back !',
                       fontSize: 14,
                       onPressed: () {
-                        Navigator.pop(context);
+                        navigationService.pop();
                       },
                       textColor: AppColor.kPrimary,
                     ),

@@ -36,16 +36,34 @@ class AutoSuggestTextFieldState extends State<AutoSuggestTextField> {
           TextEditingController textEditingController,
           FocusNode focusNode,
           VoidCallback onFieldSubmitted) {
+        // return TextFormField(
+        //   controller: textEditingController,
+        //   focusNode: focusNode,
+        //   decoration: const InputDecoration(
+        //       labelText: 'Type something',
+        //       border: OutlineInputBorder(),
+        //       isDense: true),
+        //   onChanged: (String value) {
+        //     onFieldSubmitted();
+        //   },
+        // );
+
         return TextFormField(
-          controller: textEditingController,
-          focusNode: focusNode,
-          decoration: const InputDecoration(
-              labelText: 'Type something',
-              border: OutlineInputBorder(),
-              isDense: true),
-          onChanged: (String value) {
-            onFieldSubmitted();
-          },
+          decoration: InputDecoration(
+            filled: true,
+            fillColor: Colors.white,
+            focusColor: Theme.of(context).primaryColor,
+            // focusedBorder: _border(pink),
+            // border: _border(grey),
+            // enabledBorder: _border(grey),
+            hintText: 'Type something',
+            contentPadding: const EdgeInsets.symmetric(vertical: 20),
+            prefixIcon: const Icon(
+              Icons.search,
+              color: Colors.grey,
+            ),
+          ),
+          onFieldSubmitted: (value) {},
         );
       },
       optionsViewBuilder: (BuildContext context,

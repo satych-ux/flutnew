@@ -1,6 +1,5 @@
-import 'package:flutnew/presentation/views/auth/forget_password_page_view.dart';
+import 'package:flutnew/di_service_locator/service_locator.dart';
 import 'package:flutnew/presentation/views/auth/signup_page_view.dart';
-import 'package:flutnew/presentation/views/landing/landing_page_view.dart';
 import 'package:flutnew/presentation/widgets/auth/common_component/auth_primary_button.dart';
 import 'package:flutnew/presentation/widgets/auth/common_component/auth_secondary_button.dart';
 import 'package:flutnew/presentation/widgets/auth/common_component/custom_rich_text.dart';
@@ -10,6 +9,7 @@ import 'package:flutnew/presentation/widgets/auth/common_component/primary_textf
 import 'package:flutnew/presentation/widgets/auth/common_wrapper/bg_image_container.dart';
 import 'package:flutnew/utils/constants/app_colors.dart';
 import 'package:flutnew/utils/constants/app_image_paths.dart';
+import 'package:flutnew/utils/constants/named_routes.dart';
 import 'package:flutter/material.dart';
 
 class LoginPageView extends StatelessWidget {
@@ -73,16 +73,9 @@ class LoginPageView extends StatelessWidget {
                       onTap: () {
                         if (emailController.text.isNotEmpty &&
                             emailController.text == 'satyam@gmail.com') {
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      const LandingPageView()));
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //       builder: (context) => const LandingPageView()),
-                          // );
+                          navigationService.pushReplacementScreen(
+                            NamedRoutes.landingPageRoute,
+                          );
                         }
                       },
                       borderRadius: 8,
@@ -100,11 +93,8 @@ class LoginPageView extends StatelessWidget {
                       title: 'Forgot password?',
                       fontSize: 14,
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ForgetPasswordPageView()),
-                        );
+                        navigationService
+                            .pushScreen(NamedRoutes.forgotPasswordRoute);
                       },
                       textColor: AppColor.kPrimary,
                     ),

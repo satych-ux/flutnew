@@ -1,10 +1,11 @@
-import 'package:flutnew/presentation/views/auth/login_page_view.dart';
+import 'package:flutnew/di_service_locator/service_locator.dart';
 import 'package:flutnew/presentation/widgets/auth/common_component/auth_primary_button.dart';
 import 'package:flutnew/presentation/widgets/auth/common_component/custom_rich_text.dart';
 import 'package:flutnew/presentation/widgets/auth/common_component/password_text_field.dart';
 import 'package:flutnew/presentation/widgets/auth/common_component/primary_textformfiled.dart';
 import 'package:flutnew/presentation/widgets/auth/common_wrapper/bg_image_container.dart';
 import 'package:flutnew/utils/constants/app_colors.dart';
+import 'package:flutnew/utils/constants/named_routes.dart';
 import 'package:flutter/material.dart';
 
 class SignupPageView extends StatelessWidget {
@@ -168,11 +169,8 @@ class SignupPageView extends StatelessWidget {
                         fontWeight: FontWeight.w700,
                       ),
                       onTab: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => LoginPageView()),
-                        );
+                        navigationService
+                            .pushReplacementScreen(NamedRoutes.loginRoute);
                       },
                     )
                   ],
