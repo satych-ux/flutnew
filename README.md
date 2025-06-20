@@ -1,6 +1,6 @@
 # flutnew
 
-A new Flutter project.
+A Pickle Ball sports app -  Flutter project.
 
 ## Getting Started
 
